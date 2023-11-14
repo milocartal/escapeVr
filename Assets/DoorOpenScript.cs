@@ -9,19 +9,24 @@ public class DoorOpenScript : MonoBehaviour
 
     [SerializeField] private bool openTrigger = false;
 
+    [SerializeField] private string doorOpen = "DoorOpen"; 
+
+    bool isOpened = false;
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entrer");
-        if (other.CompareTag("Player"))
+        //if (other.CompareTag("Player"))
         {
             Debug.Log("Player");
             if (openTrigger)
             {
                 Debug.Log("Open");
-                //myDoor.Play("DoorOpen",0,0.0f);
-                myDoor.SetBool("isOpen", true);
-                //gameObject.SetActive(false);
+                myDoor.Play("DoorOpen",0,0.0f);
+                //myDoor.SetBool("isOpen", true);
+                gameObject.SetActive(false);
+                //isOpened = true;
+                openTrigger = false;
             }
         }
     }
