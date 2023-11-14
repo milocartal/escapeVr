@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class LaserBeamSender : MonoBehaviour
 {
-    private float hitDistance = 0f;
     private bool isConnected = true;
+    private float maxLaserLenght = 20f;
     LineRenderer laserBeam;
+
+    private void Awake()
+    {
+        laserBeam = GetComponent<LineRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 20f))
+        
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, maxLaserLenght))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * hit.distance, Color.red);
             if (hit.collider.gameObject.CompareTag("Receiver") && !isConnected)
             {
                 Debug.Log("Is connected");
@@ -25,11 +30,9 @@ public class LaserBeamSender : MonoBehaviour
                 Debug.Log("Is disconnected");
                 isConnected = false;
             }
-            if (hit.distance != hitDistance)
-            {
-                hitDistance = hit.distance;
-                Debug.Log(hitDistance);
-            }
+            Vector3 laserBeamEnd = hit.point;
+            laserBeam.SetPosition(0, transform.position);
+            laserBeam.SetPosition(1, laserBeamEnd);
         }
     }
 }
