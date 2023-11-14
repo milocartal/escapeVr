@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,16 @@ public class DoorOpenScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entrer");
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player");
             if (openTrigger)
             {
-                myDoor.Play("DoorOpen",0,0.0f);
-                gameObject.SetActive(false);
+                Debug.Log("Open");
+                //myDoor.Play("DoorOpen",0,0.0f);
+                myDoor.SetBool("isOpen", true);
+                //gameObject.SetActive(false);
             }
         }
     }
