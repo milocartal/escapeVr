@@ -15,7 +15,6 @@ public class DoorOpenScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-<<<<<<< HEAD
         Debug.Log("entrer");
         if (other.CompareTag("Objet1"))
         {
@@ -27,14 +26,7 @@ public class DoorOpenScript : MonoBehaviour
                 //myDoor.SetBool("isOpen", true);
                 gameObject.SetActive(false);
                 //isOpened = true;
-=======
-        if ((other.CompareTag("Objet1")) || (other.CompareTag("Cube")) && (other.CompareTag("Sphere")) && (other.CompareTag("Pyramid")))
-        {
-            if (openTrigger)
-            {
-                myDoor.Play("DoorOpen",0,0.0f);
-                gameObject.SetActive(false);
->>>>>>> 13286db (changes)
+
                 openTrigger = false;
             }
         }

@@ -8,6 +8,7 @@ public class LaserBeamSender : MonoBehaviour
     private bool isConnected = true;
     private float maxLaserLenght = 20f;
     LineRenderer laserBeam;
+    [SerializeField] private room3 roomData;
 
     private void Awake()
     {
@@ -23,12 +24,11 @@ public class LaserBeamSender : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Receiver") && !isConnected)
             {
-                Debug.Log("Is connected");
                 isConnected = true;
             } else if (!hit.collider.gameObject.CompareTag("Receiver") && isConnected)
             {
-                Debug.Log("Is disconnected");
                 isConnected = false;
+                roomData.SetLaser();
             }
             Vector3 laserBeamEnd = hit.point;
             laserBeam.SetPosition(0, transform.position);
