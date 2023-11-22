@@ -16,7 +16,7 @@ public class DoorOpenScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entrer");
-        //if (other.CompareTag("Player"))
+        if (other.CompareTag("Objet1"))
         {
             Debug.Log("Player");
             if (openTrigger)
