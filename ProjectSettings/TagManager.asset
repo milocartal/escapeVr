@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Objet1
+  - Receiver
   layers:
   - Default
   - TransparentFX
