@@ -3,10 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+  tags: []
+=======
+>>>>>>> 13286db (changes)
   tags:
   - Anchor
   - Objet1
   - Receiver
+<<<<<<< HEAD
+=======
+  - Cube
+  - Sphere
+  - Pyramid
+>>>>>>> Stashed changes
+>>>>>>> 13286db (changes)
   layers:
   - Default
   - TransparentFX
