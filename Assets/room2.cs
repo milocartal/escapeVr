@@ -22,7 +22,6 @@ public class room2 : MonoBehaviour
         {
             doorOpen = true;
             doorAnim.Play("DoorOpen", 0, 0.0f);
-            Debug.Log("Bravo enculé");
         }
     }
 }

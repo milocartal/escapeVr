@@ -9,10 +9,24 @@ public class room2_trigger : MonoBehaviour
     [SerializeField] private bool checkPyramid;
     [SerializeField] private room2 roomDatas;
 
+    private SnapToTrigger snap;
+
     private void OnTriggerEnter(Collider collision)
     {
-        if (checkSphere && collision.CompareTag("Sphere")) { roomDatas.SetSphereCheck(); }
-        else if (checkPyramid && collision.CompareTag("Pyramid")) { roomDatas.SetPyramidCheck(); }
-        else if (checkCube && collision.CompareTag("Cube")) { roomDatas.SetCubeCheck(); }
+        snap = collision.GetComponent<SnapToTrigger>();
+        if (checkSphere && collision.CompareTag("Sphere")) { 
+            roomDatas.SetSphereCheck();
+            snap.Snap(gameObject.transform.position);
+        }
+        else if (checkPyramid && collision.CompareTag("Pyramid")) 
+        { 
+            roomDatas.SetPyramidCheck(); 
+            snap.Snap(gameObject.transform.position);
+        }
+        else if (checkCube && collision.CompareTag("Cube")) 
+        { 
+            roomDatas.SetCubeCheck(); 
+            snap.Snap(gameObject.transform.position);
+        }
     }
 }

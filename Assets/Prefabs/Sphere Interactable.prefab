@@ -181,9 +181,10 @@ GameObject:
   - component: {fileID: 975827942220187608}
   - component: {fileID: 5224438142242771578}
   - component: {fileID: 4035937954261686640}
+  - component: {fileID: 4388408440092428616}
   m_Layer: 0
   m_Name: Sphere Interactable
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,9 +197,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6267713049852042523}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.2500005, y: 2.8134003, z: 0.5}
-  m_LocalScale: {x: 75, y: 75, z: 75}
+  m_LocalScale: {x: 40.000004, y: 40.000004, z: 40.000004}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3243123157814947037}
@@ -261,7 +262,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6267713049852042523}
-  m_Material: {fileID: 13400000, guid: 590dbebc6f287b940ac52b3dfea3bfc1, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -471,6 +472,18 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &4388408440092428616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267713049852042523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2723dba42bd113044ad231906b498006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7850246118044483750
 GameObject:
   m_ObjectHideFlags: 0
