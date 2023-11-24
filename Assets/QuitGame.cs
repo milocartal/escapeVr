@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuitGame : MonoBehaviour
-{    public void doExitGame()
+{    
+    public void doExitGame()
     {
         Application.Quit();
     }
