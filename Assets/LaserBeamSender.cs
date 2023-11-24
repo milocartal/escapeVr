@@ -25,6 +25,7 @@ public class LaserBeamSender : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Receiver") && !isConnected)
             {
                 isConnected = true;
+                roomData.DesactivateLaser();
             } else if (!hit.collider.gameObject.CompareTag("Receiver") && isConnected)
             {
                 isConnected = false;
