@@ -7,6 +7,9 @@ TagManager:
   - Anchor
   - Objet1
   - Receiver
+  - Cube
+  - Sphere
+  - Pyramid
   layers:
   - Default
   - TransparentFX

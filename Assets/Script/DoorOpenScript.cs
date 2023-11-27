@@ -6,26 +6,20 @@ using UnityEngine;
 public class DoorOpenScript : MonoBehaviour
 {
     [SerializeField] private Animator myDoor = null;
-
     [SerializeField] private bool openTrigger = false;
 
-    [SerializeField] private string doorOpen = "DoorOpen"; 
-
-    bool isOpened = false;
+    private SnapToTrigger snap;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entrer");
+        snap = other.GetComponent<SnapToTrigger>();
         if (other.CompareTag("Objet1"))
         {
-            Debug.Log("Player");
             if (openTrigger)
             {
-                Debug.Log("Open");
+                snap.Snap(gameObject.transform.position);
                 myDoor.Play("DoorOpen",0,0.0f);
-                //myDoor.SetBool("isOpen", true);
                 gameObject.SetActive(false);
-                //isOpened = true;
                 openTrigger = false;
             }
         }
